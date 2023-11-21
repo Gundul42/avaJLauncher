@@ -3,6 +3,7 @@ package	com.top_software;
 import com.top_software.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class AvajLauncher
 {
@@ -16,31 +17,66 @@ public class AvajLauncher
 		while ((nextLine = br.readLine()) != null)
 		{
 			output.add(nextLine);
-			System.out.println(nextLine);
 		}
 		return output;
 	}
+	
+	private static void checkArgs(String[] args)
+	{
+		if (args.length != 1)
+		{
+				if (args.length < 1)
+				{
+						System.out.println("Error: You need to specify the path" + 
+						" and name of your scenario file");
+					System.exit(1);
+				}
+				else
+				{
+					System.out.println("Error: Too many arguments");
+					System.exit(1);
+				}
+		}
+	}
+
+	private static Integer validateScenarioFile(ArrayList<String> file) throws Exception
+	{
+			Iterator	it = file.iterator();
+			String		line = null;
+			int			i = 0;
+			Integer		iterations = null;
+
+			if (file.size() < 2)
+				throw new Exception("ScenarioFile error: you need at least one vehicle");
+			while (it.hasNext())
+			{
+				line = (String) it.next();
+				if (i == 0)
+				{
+					iterations = Integer.parseInt(line);
+					if (iterations < 1)
+						throw new Exception("ScenarioFile error: Line 0 must hold" +
+							" a positive number > 0");
+					continue;
+				}
+			// todo validation of vehicles !	
+				i++;
+				System.out.println(line);
+			}
+			return (iterations);
+	}
+
 
 
 	public static void main(String[] args)
 	{
-			if (args.length != 1)
-			{
-					if (args.length < 1)
-					{
-						System.out.println("Error: You need to specify the path and name of your scenario file");
-						System.exit(1);
-					}
-					else
-					{
-						System.out.println("Error: Too many arguments");
-						System.exit(1);
-					}
-			}
-			System.out.println("Yeah, open and read now " + args[0]);
+			ArrayList<String>	scenario = null;
+
+			checkArgs(args);
 			try
 			{
-				readScenarioFile(args[0]);
+				scenario = readScenarioFile(args[0]);
+				validateScenarioFile(scenario);
 			}
 			catch (Exception e)
 			{
