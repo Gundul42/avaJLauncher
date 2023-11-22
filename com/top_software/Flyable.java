@@ -1,7 +1,5 @@
 package com.top_software;
 
-import com.top_software.*;
-
 abstract class Flyable
 {
 		protected WeatherTower weatherTower;

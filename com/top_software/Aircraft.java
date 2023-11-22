@@ -1,7 +1,5 @@
 package com.top_software;
 
-import com.top_software.*;
-
 public class Aircraft extends Flyable
 {
 		protected long			id;

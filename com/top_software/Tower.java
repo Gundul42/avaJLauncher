@@ -3,7 +3,6 @@ package com.top_software;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Tower
 {
 		Tower()

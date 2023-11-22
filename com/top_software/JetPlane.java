@@ -1,7 +1,5 @@
 package com.top_software;
 
-import com.top_software.*;
-
 public class JetPlane extends Aircraft
 {
 	public JetPlane(long p_id, String p_name, Coordinates p_coordinate)

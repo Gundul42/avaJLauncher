@@ -1,7 +1,5 @@
 package com.top_software;
 
-import com.top_software.*;
-
 public class WeatherTower extends Tower
 {
 		public String getWeather(Coordinates p_coordinates)

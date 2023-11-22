@@ -1,8 +1,4 @@
-//This is a Singleton !
-
 package com.top_software;
-
-import com.top_software.*;
 
 public class AircraftFactory
 {
