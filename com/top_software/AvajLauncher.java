@@ -1,6 +1,5 @@
 package	com.top_software;
 
-import com.top_software.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -47,11 +46,11 @@ public class AvajLauncher
 			Integer		iterations = null;
 			String[]	newVehicle = null;
 			Aircraft	flyable = null;
-			AircraftFactory	factory;
+			AircraftFactory	factory = AircraftFactory.getInstance();
 			Coordinates		coords = null;
 
 			if (file.size() < 2)
-				throw new Exception("ScenarioFile error: you need at least one vehicle");
+				throw new Exception("Error: Scenario file: you need at least one vehicle");
 			while (it.hasNext())
 			{
 				line = (String) it.next();
@@ -59,22 +58,22 @@ public class AvajLauncher
 				{
 					iterations = Integer.parseInt(line);
 					if (iterations < 1)
-						throw new Exception("ScenarioFile error: Line 0 must hold" +
-							" a positive number > 0");
+						throw new Exception("Error: Scenario file: Line 0 must hold" +
+							" a positive number");
 					i++;
 					continue;
 				}
 				newVehicle = line.split(" ");
 				if (newVehicle.length != 5)
-						throw new Exception("Scenario File error in line " + i);
+					throw new Exception("Error: Scenario file: in line " + i);
 				coords = new Coordinates(
 					Integer.parseInt(newVehicle[2]),
 					Integer.parseInt(newVehicle[3]),
 					Integer.parseInt(newVehicle[4])
 				);
-				//flyable = factory.newAircraft(newVehicle[0], newVehicle[1], coords);
+				flyable = (Aircraft) factory.newAircraft(newVehicle[0], newVehicle[1], coords);
 				i++;
-				System.out.println(line + " : " + newVehicle[0]);
+				System.out.println(line + " : " + flyable.getId());
 			}
 			return (iterations);
 	}

@@ -9,16 +9,17 @@ public class WeatherProvider
 		private WeatherProvider()
 		{}
 
-		private static		WeatherProvider instance = new WeatherProvider;
+		private static		WeatherProvider instance = new WeatherProvider();
 		private String[]	weather;
 
 		public String		getCurrentWeather(Coordinates p_coordinates)
 		{
-				//return weather as string
+			//return weather as string
+			return "SNOW";
 		}
 
-		public static		getInstance()
+		public static WeatherProvider getInstance()
 		{
-				return this.instance;
+				return instance;
 		}
 }

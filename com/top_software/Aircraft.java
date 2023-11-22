@@ -21,4 +21,19 @@ public class Aircraft extends Flyable
 
 		public void updateConditions()
 		{}
+
+		public long getId()
+		{
+			return (this.id);
+		}
+
+		public String getName()
+		{
+			return (this.name);
+		}
+
+		public Coordinates getCoordinates()
+		{
+			return (this.coordinates);
+		}
 }

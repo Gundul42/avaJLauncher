@@ -11,13 +11,13 @@ public class AircraftFactory
 
 		private AircraftFactory()
 		{
-				this.id = 0;
+				id = 0;
 		}
 
 		private long					getId()
 		{
-				this.id++;
-				return (this.id);
+				id++;
+				return (id);
 		}
 
 		public static AircraftFactory	getInstance()
@@ -33,11 +33,11 @@ public class AircraftFactory
 				if (p_type == null || p_name == null)
 						throw new Exception("Factory error: type or name is null");
 				if (p_type.equals("Helicopter"))
-						return (new Helicopter(this.getId(), p_name, p_coordinate));
+						return (new Helicopter(getId(), p_name, p_coordinate));
 				else if (p_type.equals("JetPlane"))
-						return (new JetPlane(this.getId(), p_name, p_coordinate));
+						return (new JetPlane(getId(), p_name, p_coordinate));
 				else if (p_type.equals("Baloon"))
-						return (new Baloon(this.getId(), p_name, p_coordinate));
+						return (new Baloon(getId(), p_name, p_coordinate));
 				else
 						throw new Exception("Factory can only return Helicopter, " +
 							"JetPlane or Baloon");
