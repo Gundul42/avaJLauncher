@@ -31,7 +31,7 @@ public class AircraftFactory
 			throws Exception
 		{
 				if (p_type == null || p_name == null)
-						throw new Exception("Factory error: type or name is null");
+						throw new Exception("Error: AircraftFactory: type or name is null");
 				if (p_type.equals("Helicopter"))
 						return (new Helicopter(getId(), p_name, p_coordinate));
 				else if (p_type.equals("JetPlane"))
@@ -39,7 +39,7 @@ public class AircraftFactory
 				else if (p_type.equals("Baloon"))
 						return (new Baloon(getId(), p_name, p_coordinate));
 				else
-						throw new Exception("Factory can only return Helicopter, " +
-							"JetPlane or Baloon");
+						throw new Exception("Error: AircraftFactory: " +  p_type +
+							" is an unknown Aircraft");
 		}
 }
