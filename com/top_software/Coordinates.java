@@ -1,4 +1,4 @@
-package com.top_software
+package com.top_software;
 
 public class Coordinates
 {

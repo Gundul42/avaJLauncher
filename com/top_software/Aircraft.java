@@ -1,16 +1,16 @@
-package com.top_software
+package com.top_software;
 
-import com.top_software.Coordinates
+import com.top_software.*;
 
 public class Aircraft extends Flyable
 {
 		protected long			id;
-		protected string		name;
+		protected String		name;
 		protected Coordinates	coordinates;
 
-		protected Aircraft(long p_id, string p_name, Coordinates p_coordinate) 
+		protected Aircraft(long p_id, String p_name, Coordinates p_coordinate) 
 		{
-				if (!p_name || !p_id || !p_coordinate)
+				if (p_name == null || p_id == null || p_coordinate == null)
 						throw new Exception("Wrong instantiation of an Aircraft");
 				if (p_name.length() == 0)
 						throw new Exception("This is not a name for an Aircraft");
@@ -19,7 +19,6 @@ public class Aircraft extends Flyable
 				this.coordinates = p_coordinate;
 		}
 
-		@override
 		public void updateConditions()
 		{}
 }

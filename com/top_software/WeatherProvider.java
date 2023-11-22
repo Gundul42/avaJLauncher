@@ -1,8 +1,8 @@
 //This is a Singleton !
 
-package com.top_software
+package com.top_software;
 
-import com.top_software.Coordinates
+import com.top_software.*;
 
 public class WeatherProvider
 {
@@ -10,9 +10,9 @@ public class WeatherProvider
 		{}
 
 		private static		WeatherProvider instance = new WeatherProvider;
-		private string[]	weather;
+		private String[]	weather;
 
-		public string		getCurrentWeather(Coordinates p_coordinates)
+		public String		getCurrentWeather(Coordinates p_coordinates)
 		{
 				//return weather as string
 		}

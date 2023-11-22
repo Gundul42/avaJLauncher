@@ -45,6 +45,9 @@ public class AvajLauncher
 			String		line = null;
 			int			i = 0;
 			Integer		iterations = null;
+			String[]	newVehicle = null;
+			Flyable		flyable = null;
+			AircraftFactory	factory;
 
 			if (file.size() < 2)
 				throw new Exception("ScenarioFile error: you need at least one vehicle");
@@ -57,11 +60,14 @@ public class AvajLauncher
 					if (iterations < 1)
 						throw new Exception("ScenarioFile error: Line 0 must hold" +
 							" a positive number > 0");
+					i++;
 					continue;
 				}
-			// todo validation of vehicles !	
+				newVehicle = line.split(" ");
+				if (newVehicle.length != 5)
+						throw new Exception("Scenario File error in line " + i);
 				i++;
-				System.out.println(line);
+				System.out.println(line + " : " + newVehicle[1]);
 			}
 			return (iterations);
 	}

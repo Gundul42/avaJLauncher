@@ -1,13 +1,13 @@
-package com.top_software
+package com.top_software;
 
-import com.top_software.Tower
-import com.top_software.Coordinates
+import com.top_software.*;
 
 public class WeatherTower extends Tower
 {
-		public string getWeather(Coordinates p_coordinates)
+		public String getWeather(Coordinates p_coordinates)
 		{
 				//get the weather at that position
+				return "SUN";
 		}
 
 		public void changeWeather()
