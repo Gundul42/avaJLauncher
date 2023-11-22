@@ -1,6 +1,6 @@
 package com.top_software;
 
-import com.top_software.Coordinates;
+import com.top_software.*;
 
 public class Helicopter extends Aircraft
 {

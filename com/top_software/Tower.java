@@ -13,7 +13,7 @@ public class Tower
 
 		private List<Flyable> observers;
 
-		public void register(Flyable p_flyable)
+		public void register(Flyable p_flyable) throws Exception
 		{
 				if (p_flyable == null)
 						throw new Exception("Tried to register NULL as flyable to tower");
@@ -21,7 +21,7 @@ public class Tower
 						throw new Exception("Could not register flyable to tower");
 		}
 
-		public void unregister(Flyable p_flyable)
+		public void unregister(Flyable p_flyable) throws Exception
 		{
 				if (p_flyable == null)
 						throw new Exception("Tried to unregister NULL from tower");

@@ -46,8 +46,9 @@ public class AvajLauncher
 			int			i = 0;
 			Integer		iterations = null;
 			String[]	newVehicle = null;
-			Flyable		flyable = null;
+			Aircraft	flyable = null;
 			AircraftFactory	factory;
+			Coordinates		coords = null;
 
 			if (file.size() < 2)
 				throw new Exception("ScenarioFile error: you need at least one vehicle");
@@ -66,8 +67,14 @@ public class AvajLauncher
 				newVehicle = line.split(" ");
 				if (newVehicle.length != 5)
 						throw new Exception("Scenario File error in line " + i);
+				coords = new Coordinates(
+					Integer.parseInt(newVehicle[2]),
+					Integer.parseInt(newVehicle[3]),
+					Integer.parseInt(newVehicle[4])
+				);
+				//flyable = factory.newAircraft(newVehicle[0], newVehicle[1], coords);
 				i++;
-				System.out.println(line + " : " + newVehicle[1]);
+				System.out.println(line + " : " + newVehicle[0]);
 			}
 			return (iterations);
 	}

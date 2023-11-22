@@ -8,9 +8,9 @@ public class Aircraft extends Flyable
 		protected String		name;
 		protected Coordinates	coordinates;
 
-		protected Aircraft(long p_id, String p_name, Coordinates p_coordinate) 
+		protected Aircraft(long p_id, String p_name, Coordinates p_coordinate) throws Exception
 		{
-				if (p_name == null || p_id == null || p_coordinate == null)
+				if (p_name == null || p_coordinate == null)
 						throw new Exception("Wrong instantiation of an Aircraft");
 				if (p_name.length() == 0)
 						throw new Exception("This is not a name for an Aircraft");

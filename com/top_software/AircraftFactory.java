@@ -6,13 +6,13 @@ import com.top_software.*;
 
 public class AircraftFactory
 {
+		private static AircraftFactory	instance = null;
+		private long					id;
+
 		private AircraftFactory()
 		{
 				this.id = 0;
 		}
-
-		private static AircraftFactory	instance = new AircraftFactory();
-		private long					id;
 
 		private long					getId()
 		{
@@ -22,6 +22,8 @@ public class AircraftFactory
 
 		public static AircraftFactory	getInstance()
 		{
+				if (instance == null)
+					instance = new AircraftFactory();
 				return instance;
 		}
 
